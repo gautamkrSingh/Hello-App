@@ -1,0 +1,38 @@
+<div class="container">
+    <form #f="ngForm" (ngSubmit)="onsubmit(f)">
+        <div class="form-group">
+            <label for="courseName">Course Name</label>
+            <input ngModel name="courseName" type="text" #courseName="ngModel" class="form-control" required
+                minlength="3" maxlength="10">
+            <div class="alert alert-danger" *ngIf="courseName.touched && !courseName.valid">
+                <div *ngIf="courseName.errors?.['required']">
+                    Course Name is required
+                </div>
+                <div *ngIf="courseName.errors?.['minlength']">
+                    minimum 3 character
+                </div>
+                <div *ngIf="courseName.errors?.['maxlength']">
+                    maximum 10 character is allowed
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="category"> category</label>
+            <select ngModel name="category" type="text" #category="ngModel" class="form-control" id="category" required>
+                <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+            </select>
+            <div  class="alert alert-danger" *ngIf="category.touched && !category.valid">
+                <div *ngIf="category.errors?.['required']">
+                    category is required
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="isMoneyBack"></label>
+            <input name="isMoneyBack" ngModel type="checkbox" #isMoneyBack="ngModel"  > 30 days
+                money back gurantee
+        </div>
+        <p>{{ f.value | json }}</p>
+        <input type="text" value = "Sumit" class="btn btn-primary">
+    </form>
+</div>

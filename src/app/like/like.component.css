@@ -1,0 +1,11 @@
+.normal{
+    color: #ccc;
+    cursor: pointer;
+}
+.liked{
+    color: deeppink;
+    cursor:pointer;
+}
+.like-count{
+    padding-left: 01%;
+}

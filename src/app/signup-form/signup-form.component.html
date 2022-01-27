@@ -1,0 +1,33 @@
+<form [formGroup]="form" (ngSubmit) = "login()" >
+    <!-- <div *ngIf= "form.errors" class="alert alert-danger">username is not valid</div> -->
+    <div formGroupName = "contact">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input 
+                formControlName = "username"
+                id="username" 
+                type="text" 
+                class="form-control" (click) = 'onclick(username)' >
+                <!-- <p *ngIf="username?.pending" >Checking for Uniqueness!!!......</p> -->
+                <div *ngIf="username?.touched && username?.invalid" class="alert alert-danger"> 
+                    <p *ngIf="username?.errors?.['required']" >Username is required</p>
+                    <p *ngIf="username?.errors?.['minlength']" >Username should be of minimum {{ username?.errors?.['minlength']?.requiredLength }} length</p>
+                    <p *ngIf="username?.errors?.['cannotHaveSpace']" >Can not have space!!!...</p>
+                    <!-- <p *ngIf="username?.errors?.['checkUnique']" >Name is already taken!!!......</p> -->
+                </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input 
+                formControlName = "password"
+                id="password" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="password?.touched && password?.invalid" class="alert alert-danger"> 
+                <p *ngIf="password?.errors?.['required']" >password is required</p>
+                <p *ngIf="username?.errors?.['minlength']" >password should be of minimum  {{ password?.errors?.['minlength'].requiredLength }} length</p>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Sign Up</button>
+</form>

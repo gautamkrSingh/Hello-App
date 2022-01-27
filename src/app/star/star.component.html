@@ -1,0 +1,10 @@
+<!-- <span class="glyphicon" (click)="toggleStar()" [class.glyphicon-star-empty] = "starFlag" [class.glyphicon-star] = "!starFlag" aria-hidden="true"></span> -->
+<!-- <span class = "glyphicon glyphicon-home"></span> -->
+<span class="glyphicon" (click)="toggleStar()" 
+[ngClass] = "{
+    'glyphicon-star-empty': starFlag,
+    'glyphicon-star': !starFlag
+}"
+ aria-hidden="true"></span>
+
+

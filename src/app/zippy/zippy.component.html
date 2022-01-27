@@ -1,0 +1,24 @@
+<div class="zippy">
+    <div [ngClass]="{
+        'map-clean' : !mapOpen,
+        'map-bg' : mapOpen
+    }" (click)="mapOpen = !mapOpen">Map
+        <span [ngClass]="{
+            'glyphicon-chevron-up' : mapOpen,
+            'glyphicon-chevron-down' : !mapOpen
+        }" class="glyphicon " (click)="mapOpen = !mapOpen"></span>
+    </div>
+    <div class="zippy-body" *ngIf="mapOpen">Map Content.....</div>
+</div>
+<div class="zippy">
+    <div [ngClass]="{
+        'map-clean' : !ListOpen,
+        'map-bg' : ListOpen
+    }" (click)="ListOpen = !ListOpen" >list
+        <span [ngClass]="{
+            'glyphicon-chevron-up' : ListOpen,
+            'glyphicon-chevron-down' : !ListOpen
+        }" class="glyphicon " (click)="ListOpen = !ListOpen"></span>
+    </div>
+    <div class="zippy-body" *ngIf="ListOpen">List Content.....</div>
+</div>

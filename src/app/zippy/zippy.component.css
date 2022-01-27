@@ -1,0 +1,27 @@
+.zippy {
+    border: solid 1px rgb(22, 21, 21);
+    
+    width: 50%;
+    margin-top: .03%;
+    margin-left: 3%;
+
+}
+
+.map-bg {
+    padding: 1%;
+    background-color: rgb(230, 222, 222);
+
+
+}
+.map-clean {
+    padding: 1%;
+
+
+}
+.zippy-body {
+    padding: 1%;
+}
+
+.glyphicon{
+    float: right;
+}
